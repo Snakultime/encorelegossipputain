@@ -1,6 +1,5 @@
 class StartController < ApplicationController
   def index
-    @gossip=Gossip.find(params[:index])
   end
 
   def team

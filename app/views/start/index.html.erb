@@ -2,7 +2,6 @@
   <h1>Les potins !</h1>
   <p>Voilà tout les putains de potins, putain !</p>
   <dl> <% Gossip.all.each do |g| %>
-    <p> Gossip <%= @gossip.id %> </p>
     <dt> <%= g.author %> </dt>
     <dd> <%= g.content %> </dd>
     <% end %>
