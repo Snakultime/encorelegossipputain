@@ -1,18 +1,20 @@
 class StartController < ApplicationController
+  def contact
+  end
+
   def index
+ 
   end
 
   def team
   end
 
-  def contact
+  def gossip
+  	@gossip = Gossip.find(params[:id])
   end
 
   def welcome
-    @user=params[:user]
+  	@first_name = params[:first_name]
   end
 
-  def one_gossip
-
-  end
 end

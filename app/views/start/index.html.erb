@@ -1,9 +1,23 @@
+
 <body>
-  <h1>Les potins !</h1>
-  <p>Voilà tout les putains de potins, putain !</p>
-  <dl> <% Gossip.all.each do |g| %>
-    <dt> <%= g.author %> </dt>
-    <dd> <%= g.content %> </dd>
-    <% end %>
-  </dl>
+	<h1>Hello</h1>
+	<p>Tu es sur la page d'accueil</p>
+	<p> Voici la liste des gossips déjà présents</p>
+	<div class="card-columns">
+	<% Gossip.all.each_with_index do |g, id|%>
+
+		<div class="card p-3">
+    <blockquote class="blockquote mb-0">
+      <p><%=g.content%></p>
+      <footer class="blockquote-footer">
+        <small class="text-muted">
+         Author <cite title="Source Title"><%=g.author%></cite>
+        </small></footer><br>
+         <a href="<%=gossip_path(id + 1)%>"" class="btn btn-primary">Gossip page</a>
+      </footer>
+    </blockquote>
+  </div>
+
+		<% end %>
+</div>
 </body>

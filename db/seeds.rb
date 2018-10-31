@@ -1,7 +1,19 @@
 require 'faker'
 
-Gossip.destroy_all
+def clean_db
+	Gossip.destroy_all
+end 
 
-      10.times do
-        Gossip.create(author: Faker::Superhero.name, content: Faker::Lorem.sentences)
-      end
+def seed_gossip
+	10.times do |index|
+	gossip = Gossip.create!(author: Faker::Superhero.name, content: Faker::Lorem.sentences)
+	end
+end 
+
+def perform
+	clean_db
+	seed_gossip
+end
+
+perform
+	
